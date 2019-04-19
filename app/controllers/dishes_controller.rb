@@ -12,6 +12,10 @@ class DishesController < ApplicationController
   def show
   end
 
+  def homepage
+    @dishes = Dish.all.order("description")
+  end
+
   # GET /dishes/new
   def new
     @dish = Dish.new

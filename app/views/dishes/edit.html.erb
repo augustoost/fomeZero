@@ -2,5 +2,12 @@
 
 <%= render 'form', dish: @dish %>
 
+<% for ingredient in Ingredient.all %>
+  <div>
+    <%= check_box_tag "dish[ingredients_ids][]", ingredient.id, @dish.ingredient.include?(ingredient) %>
+    <%= ingredient.description%>
+  </div>
+<% end %>
+
 <%= link_to 'Show', @dish %> |
 <%= link_to 'Back', dishes_path %>

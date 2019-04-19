@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<p>Restaurante: <%= @dish.restaurant.name %></p>
+
 <p>
   <strong>Description:</strong>
   <%= @dish.description %>
@@ -14,6 +16,14 @@
   <strong>Time:</strong>
   <%= @dish.time %>
 </p>
+
+<p>
+  Ingredientes: <%= @dish.ingredients.map(&:description).join(', ') %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
+
 
 <%= link_to 'Edit', edit_dish_path(@dish) %> |
 <%= link_to 'Back', dishes_path %>

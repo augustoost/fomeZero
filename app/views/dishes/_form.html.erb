@@ -11,6 +11,12 @@
     </div>
   <% end %>
 
+
+  <div class="field form-group">
+    <label>Restaurante</label>
+    <%= form.select :restaurant_id, Restaurant.all.collect {|restaurant| [restaurant.name, restaurant.id]}, :class => "form-control" %>
+  </div>
+
   <div class="field">
     <%= form.label :description %>
     <%= form.text_field :description %>
@@ -25,6 +31,14 @@
     <%= form.label :time %>
     <%= form.text_field :time %>
   </div>
+
+  <div class="field">
+    <label>Ingredientes</label><br>
+    <%= form.collection_check_boxes(:ingredient_ids, Ingredient.all, :id, :description, checked: dish.ingredients.map(&:id)) do |i| %>
+      <%= i.check_box %> <%= i.label %>
+    <% end %>
+  </div>
+
 
   <div class="actions">
     <%= form.submit %>

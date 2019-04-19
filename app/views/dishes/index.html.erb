@@ -15,12 +15,12 @@
   <tbody>
     <% @dishes.each do |dish| %>
       <tr>
-        <td><%= dish.description %></td>
-        <td><%= dish.price %></td>
-        <td><%= dish.time %></td>
-        <td><%= link_to 'Show', dish %></td>
-        <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
-        <td><%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td scope="row" ><%= dish.description %></td>
+        <td scope="row"><%= dish.price %></td>
+        <td scope="row"><%= dish.time %></td>
+        <td scope="row"><%= link_to 'Show', dish %></td>
+        <td scope="row"><%= link_to 'Edit', edit_dish_path(dish) %></td>
+        <td scope="row"><%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
