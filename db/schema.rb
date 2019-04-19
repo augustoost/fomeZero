@@ -24,9 +24,11 @@ ActiveRecord::Schema.define(version: 2019_04_19_180846) do
     t.integer "restaurant_id"
   end
 
-  create_table "dishes_ingredients_tables", force: :cascade do |t|
-    t.string "dishes"
-    t.string "ingredients"
+  create_table "dishes_ingredients", id: false, force: :cascade do |t|
+    t.bigint "dish_id"
+    t.bigint "ingredient_id"
+    t.index ["dish_id"], name: "index_dishes_ingredients_on_dish_id"
+    t.index ["ingredient_id"], name: "index_dishes_ingredients_on_ingredient_id"
   end
 
   create_table "ingredients", force: :cascade do |t|
