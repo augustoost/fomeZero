@@ -1,13 +1,8 @@
-<h1>Editing Dish</h1>
+<h1 class="espacoLateral float_center">Edit Dish</h1>
 
 <%= render 'form', dish: @dish %>
 
-<% for ingredient in Ingredient.all %>
-  <div>
-    <%= check_box_tag "dish[ingredients_ids][]", ingredient.id, @dish.ingredient.include?(ingredient) %>
-    <%= ingredient.description%>
-  </div>
-<% end %>
-
-<%= link_to 'Show', @dish %> |
-<%= link_to 'Back', dishes_path %>
+<div class="espacoTopo espacoLateral">
+<%= link_to 'Show', @dish, class: "btn btn-outline-info" %>
+<%= link_to 'Back', dishes_path, class: "btn btn-outline-dark" %>
+</div>

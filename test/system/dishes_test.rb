@@ -30,7 +30,7 @@ class DishesTest < ApplicationSystemTestCase
     fill_in "Description", with: @dish.description
     fill_in "Price", with: @dish.price
     fill_in "Time", with: @dish.time
-    click_on "Update Dish"
+    click_on "update dish"
 
     assert_text "Dish was successfully updated"
     click_on "Back"

@@ -1,31 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div class="espacoLateral">
+  <h2>Pratos</h2>
 
-<h1>Dishes</h1>
-
-<table>
-  <thead>
+  <table class="table table-hover">
+    <thead>
     <tr>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Time</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Preço</th>
+      <th scope="col">Tempo de Preparo</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
-
-  <tbody>
+    </thead>
+    <tbody>
     <% @dishes.each do |dish| %>
       <tr>
         <td scope="row" ><%= dish.description %></td>
         <td scope="row"><%= dish.price %></td>
         <td scope="row"><%= dish.time %></td>
-        <td scope="row"><%= link_to 'Show', dish %></td>
-        <td scope="row"><%= link_to 'Edit', edit_dish_path(dish) %></td>
-        <td scope="row"><%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td scope="row"><%= link_to 'Mostrar', dish, :class => "btn btn-outline-info" %></td>
+        <td scope="row"><%= link_to 'Editar', edit_dish_path(dish), class: "btn btn-outline-secondary" %></td>
+        <td scope="row"><%= link_to 'Excluir', dish, :class => "btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-<br>
-
-<%= link_to 'New Dish', new_dish_path %>
+  <%= link_to 'New Dish', new_dish_path, :class => "btn btn-outline-success " %>
+</div>

@@ -12,6 +12,8 @@ class DishesController < ApplicationController
   def show
   end
 
+  # GET /dishes/1
+  # GET /dishes/1.json
   def homepage
     @dishes = Dish.all.order("description")
   end
