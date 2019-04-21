@@ -1,5 +1,7 @@
+<p id="notice"><%= notice %></p>
+
 <div class="espacoLateral">
-  <h2>Pratos</h2>
+  <h1>Pratos</h1>
 
   <table class="table table-hover">
     <thead>
@@ -16,9 +18,9 @@
         <td scope="row" ><%= dish.description %></td>
         <td scope="row"><%= dish.price %></td>
         <td scope="row"><%= dish.time %></td>
-        <td scope="row"><%= link_to 'Mostrar', dish, :class => "btn btn-outline-info" %></td>
-        <td scope="row"><%= link_to 'Editar', edit_dish_path(dish), class: "btn btn-outline-secondary" %></td>
-        <td scope="row"><%= link_to 'Excluir', dish, :class => "btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td scope="row"><%= link_to 'Show', dish, :class => "btn btn-outline-info" %></td>
+        <td scope="row"><%= link_to 'Edit', edit_dish_path(dish), class: "btn btn-outline-secondary" %></td>
+        <td scope="row"><%= link_to 'Destroy', dish, :class => "btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
     </tbody>

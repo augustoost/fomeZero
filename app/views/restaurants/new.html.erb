@@ -1,5 +1,7 @@
-<h1>New Restaurant</h1>
+<h1 class="espacoLateral float_center">New Restaurant</h1>
 
 <%= render 'form', restaurant: @restaurant %>
 
-<%= link_to 'Back', restaurants_path %>
+<div class="espacoLateral espacoTopo">
+  <%= link_to 'Back', restaurants_path, class: "btn btn-outline-secondary" %>
+</div>

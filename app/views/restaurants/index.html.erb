@@ -1,31 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Restaurants</h1>
+<div class="espacoLateral">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Phone</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <h1>Restaurants</h1>
 
-  <tbody>
-    <% @restaurants.each do |restaurant| %>
+  <table class="table table-hover">
+    <thead>
       <tr>
-        <td><%= restaurant.name %></td>
-        <td><%= restaurant.address %></td>
-        <td><%= restaurant.phone %></td>
-        <td><%= link_to 'Show', restaurant %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th scope="col">Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Phone</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @restaurants.each do |restaurant| %>
+        <tr>
+          <td scope="row" ><%= restaurant.name %></td>
+          <td scope="row" ><%= restaurant.address %></td>
+          <td scope="row" ><%= restaurant.phone %></td>
+          <td scope="row" ><%= link_to 'Show', restaurant, :class => "btn btn-outline-info" %></td>
+          <td scope="row" ><%= link_to 'Edit', edit_restaurant_path(restaurant), class: "btn btn-outline-secondary" %></td>
+          <td scope="row" ><%= link_to 'Destroy', restaurant, :class => "btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Restaurant', new_restaurant_path %>
+  <br>
+
+  <%= link_to 'New Restaurant', new_restaurant_path, :class => "btn btn-outline-success "  %>
+</div>
